@@ -3201,7 +3201,7 @@ This typically indicates that your device does not have a healthy Internet conne
     top: ${({open:t})=>t?"70px":"-100%"};
     left: 0;
     width: 100%;
-    height: calc(100vh - 339px);
+    height: calc(100vh);
     background-color: #9c9b9b;
     transition: all 0.4s ease-in-out;
     padding: 0;
@@ -3252,7 +3252,7 @@ This typically indicates that your device does not have a healthy Internet conne
     &:hover {
       color: #000;
     }
-`,DL=()=>{const{user:t}=Lc(),{logout:e}=Vc(),[n,r]=T.useState(!1),i=()=>{r(!n)};return y.jsxs(CL,{children:[y.jsxs("p",{children:["Mini ",y.jsx(RL,{children:"Blog"})]}),y.jsx(xL,{onClick:i,children:n?y.jsx(PL,{size:24}):y.jsx(AL,{size:24})}),y.jsxs(kL,{open:n,children:[y.jsx("li",{children:y.jsx(gi,{to:"/",exact:!0,activeClassName:"active",onClick:()=>r(!1),children:"Home"})}),!t&&y.jsxs(y.Fragment,{children:[y.jsx("li",{children:y.jsx(gi,{to:"/login",activeClassName:"active",onClick:()=>r(!1),children:"Login"})}),y.jsx("li",{children:y.jsx(gi,{to:"/register",activeClassName:"active",onClick:()=>r(!1),children:"Cadastrar"})})]}),t&&y.jsxs(y.Fragment,{children:[y.jsx("li",{children:y.jsx(gi,{to:"/posts/create",activeClassName:"active",onClick:()=>r(!1),children:"Novo post"})}),y.jsx("li",{children:y.jsx(gi,{to:"/dashboard",activeClassName:"active",onClick:()=>r(!1),children:"Dashboard"})})]}),y.jsx("li",{children:y.jsx(gi,{to:"/about",activeClassName:"active",onClick:()=>r(!1),children:"Sobre"})}),t&&y.jsx("li",{children:y.jsx(NL,{onClick:()=>{e(),r(!1)},children:"Sair"})})]})]})},OL=M.footer`
+`,DL=()=>{const{user:t}=Lc(),{logout:e}=Vc(),[n,r]=T.useState(!1),i=()=>{r(!n)};return T.useEffect(()=>(n?document.body.style.overflow="hidden":document.body.style.overflow="auto",()=>{document.body.style.overflow="auto"}),[n]),y.jsxs(CL,{children:[y.jsxs("p",{children:["Mini ",y.jsx(RL,{children:"Blog"})]}),y.jsx(xL,{onClick:i,children:n?y.jsx(PL,{size:24}):y.jsx(AL,{size:24})}),y.jsxs(kL,{open:n,children:[y.jsx("li",{children:y.jsx(gi,{to:"/",exact:!0,activeClassName:"active",onClick:()=>r(!1),children:"Home"})}),!t&&y.jsxs(y.Fragment,{children:[y.jsx("li",{children:y.jsx(gi,{to:"/login",activeClassName:"active",onClick:()=>r(!1),children:"Login"})}),y.jsx("li",{children:y.jsx(gi,{to:"/register",activeClassName:"active",onClick:()=>r(!1),children:"Cadastrar"})})]}),t&&y.jsxs(y.Fragment,{children:[y.jsx("li",{children:y.jsx(gi,{to:"/posts/create",activeClassName:"active",onClick:()=>r(!1),children:"Novo post"})}),y.jsx("li",{children:y.jsx(gi,{to:"/dashboard",activeClassName:"active",onClick:()=>r(!1),children:"Dashboard"})})]}),y.jsx("li",{children:y.jsx(gi,{to:"/about",activeClassName:"active",onClick:()=>r(!1),children:"Sobre"})}),t&&y.jsx("li",{children:y.jsx(NL,{onClick:()=>{e(),r(!1)},children:"Sair"})})]})]})},OL=M.footer`
     height: 272px;
     display: flex;
     flex-direction: column;
