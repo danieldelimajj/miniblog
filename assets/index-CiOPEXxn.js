@@ -3235,8 +3235,8 @@ This typically indicates that your device does not have a healthy Internet conne
     top: ${({open:t})=>t?"70px":"-100%"};
     left: 0;
     width: 100%;
-    height: calc(100vh);
-    background-color: #9c9b9b;
+    height: calc(100vh - 400px);
+    
     transition: all 0.4s ease-in-out;
     padding: 0;
     margin: 0;
@@ -3255,7 +3255,7 @@ This typically indicates that your device does not have a healthy Internet conne
     }
 
     @media (max-width: 768px) {
-        color: #f7f7f7;
+        color: #000;
         text-transform: uppercase;
         border: 1px solid;
         border-radius: 5px;
@@ -3274,7 +3274,7 @@ This typically indicates that your device does not have a healthy Internet conne
 `,DL=L.button`
     color: #000;
     @media (max-width: 768px) {
-        color: #f7f7f7;
+        
         border: 1px solid;
         border-radius: 5px;
         padding: 5px;
@@ -3297,6 +3297,7 @@ This typically indicates that your device does not have a healthy Internet conne
     @media(max-width: 479px) {
         font-size: 15px;  
         text-align: center ;
+        height: 210px;
     }
 `,LL=()=>y.jsxs(VL,{children:[y.jsx("h3",{children:"Escreva sobre o que você tem interesse!"}),y.jsx("p",{children:"Mini blog © 2024"})]}),ML=L.div`
     text-align: center;
@@ -3321,9 +3322,19 @@ This typically indicates that your device does not have a healthy Internet conne
     text-align: center;
 `,BL=L.h2`
     font-size: 2.2em;
+
+@media(max-width: 497px) {
+    font-size: 1.6em;
+}
 `,zL=L.p`
     color: #aaa;
     margin-bottom: 2em;
+
+    @media(max-width: 497px) {
+        display: block;
+        margin: auto;
+        width: 255px;
+    }
 
 `,WL={loading:null,error:null},qL=(t,e)=>{switch(e.type){case"LOADING":return{loading:!0,error:null};case"INSERTED_DOC":return{loading:!1,error:null};case"ERROR":return{loading:!1,error:e.payload};default:return t}},HL=t=>{const[e,n]=T.useReducer(qL,WL),[r,i]=T.useState(!1),s=a=>{r||n(a)},o=async a=>{s({type:"LOADING"});try{const l={...a,createdAt:Ae.now()},u=await H2(TT(ka,t),l);s({type:"INSERTED_DOC",payload:u})}catch(l){s({type:"ERROR",payload:l.message})}};return T.useEffect(()=>()=>i(!0),[]),{insertDocument:o,response:e}},KL=()=>{const[t,e]=T.useState(""),[n,r]=T.useState(""),[i,s]=T.useState(""),[o,a]=T.useState([]),[l,u]=T.useState(""),{user:c}=Lc(),{insertDocument:h,response:d}=HL("posts"),m=aa(),v=_=>{_.preventDefault(),u("");try{new URL(n)}catch{u("A imagem precisa ser uma URL.")}const E=o.split(",").map(p=>p.trim().toLowerCase());(!t||!n||!o||!i)&&u("Por favor, preencha todos os campos."),!l&&(h({title:t,image:n,body:i,tagsArray:E,uid:c.uid,createdBy:c.displayName}),m("/"))};return y.jsxs(jL,{children:[y.jsx(BL,{children:"Criar post"}),y.jsx(zL,{children:"Escreva sobre o que quiser e compartilhe o seu conhecimento."}),y.jsxs("form",{onSubmit:v,children:[y.jsxs("label",{children:[y.jsx("span",{children:"Título:"}),y.jsx("input",{type:"text",name:"title",required:!0,placeholder:"Pense num bom título...",onChange:_=>e(_.target.value),value:t})]}),y.jsxs("label",{children:[y.jsx("span",{children:"URL da imagem:"}),y.jsx("input",{type:"text",name:"image",required:!0,placeholder:"Insira a imagem que representa o seu post.",onChange:_=>r(_.target.value),value:n})]}),y.jsxs("label",{children:[y.jsx("span",{children:"Conteúdo:"}),y.jsx("textarea",{name:"body",required:!0,placeholder:"Insira o conteúdo do post:",onChange:_=>s(_.target.value),value:i})]}),y.jsxs("label",{children:[y.jsx("span",{children:"Tags:"}),y.jsx("input",{type:"text",name:"tags",required:!0,placeholder:"Insira as tags separadas por vírgula",onChange:_=>a(_.target.value),value:o})]}),!d.loading&&y.jsx("button",{className:"btn",children:"Cadastrar"}),d.loading&&y.jsx("button",{className:"btn",disabled:!0,children:"Aguarde..."}),d.error&&y.jsx(ParagraphError,{children:d.error}),l&&y.jsx(ParagraphError,{children:l})]})]})},GL={loading:null,error:null},QL=(t,e)=>{switch(e.type){case"LOADING":return{loading:!0,error:null};case"DELETED_DOC":return{loading:!1,error:null};case"ERROR":return{loading:!1,error:e.payload};default:return t}},YL=t=>{const[e,n]=T.useReducer(QL,GL),[r,i]=T.useState(!1),s=a=>{r||n(a)},o=async a=>{s({type:"LOADING"});try{const l=await q2(kc(ka,t,a));s({type:"DELETED_DOC",payload:l})}catch(l){s({type:"ERROR",payload:l.message})}};return T.useEffect(()=>()=>i(!0),[]),{deleteDocument:o,response:e}},JL=L.div`
     font-size: 1.3em;
