@@ -3235,14 +3235,12 @@ This typically indicates that your device does not have a healthy Internet conne
     top: ${({open:t})=>t?"70px":"-100%"};
     left: 0;
     width: 100%;
-    height: calc(100vh - 400px);
-    
+    height: 75vh;
+    background-color: #9c9b9b;
     transition: all 0.4s ease-in-out;
     padding: 0;
     margin: 0;
     z-index: 1;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
   }
 `,gi=L(MP)`
     text-decoration: none;
@@ -3255,7 +3253,7 @@ This typically indicates that your device does not have a healthy Internet conne
     }
 
     @media (max-width: 768px) {
-        color: #000;
+        color: #f7f7f7;
         text-transform: uppercase;
         border: 1px solid;
         border-radius: 5px;
@@ -3281,13 +3279,14 @@ This typically indicates that your device does not have a healthy Internet conne
         width: 60px;
         font-weight: bold;
         text-transform: uppercase;
+        color: #f7f7f7;
     }
 
     &:hover {
       color: #000;
     }
 `,OL=()=>{const{user:t}=Lc(),{logout:e}=Vc(),[n,r]=T.useState(!1),i=()=>{r(!n)};return T.useEffect(()=>(n?document.body.style.overflow="hidden":document.body.style.overflow="auto",()=>{document.body.style.overflow="auto"}),[n]),y.jsxs(CL,{children:[y.jsxs("p",{children:["Mini ",y.jsx(kL,{children:"Blog"})]}),y.jsx(NL,{onClick:i,children:n?y.jsx(RL,{size:24}):y.jsx(PL,{size:24})}),y.jsxs(xL,{open:n,children:[y.jsx("li",{children:y.jsx(gi,{to:"/",onClick:()=>r(!1),children:"Home"})}),!t&&y.jsxs(y.Fragment,{children:[y.jsx("li",{children:y.jsx(gi,{to:"/login",onClick:()=>r(!1),children:"Login"})}),y.jsx("li",{children:y.jsx(gi,{to:"/register",onClick:()=>r(!1),children:"Cadastrar"})})]}),t&&y.jsxs(y.Fragment,{children:[y.jsx("li",{children:y.jsx(gi,{to:"/posts/create",onClick:()=>r(!1),children:"Novo post"})}),y.jsx("li",{children:y.jsx(gi,{to:"/dashboard",onClick:()=>r(!1),children:"Dashboard"})})]}),y.jsx("li",{children:y.jsx(gi,{to:"/about",onClick:()=>r(!1),children:"Sobre"})}),t&&y.jsx("li",{children:y.jsx(DL,{onClick:()=>{e(),r(!1)},children:"Sair"})})]})]})},VL=L.footer`
-    height: 272px;
+    height: 25vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -3295,9 +3294,10 @@ This typically indicates that your device does not have a healthy Internet conne
     background-color: #edf3f6;
 
     @media(max-width: 479px) {
-        font-size: 15px;  
+        padding-top: 20px;
+        font-size: 16px;  
         text-align: center ;
-        height: 210px;
+        
     }
 `,LL=()=>y.jsxs(VL,{children:[y.jsx("h3",{children:"Escreva sobre o que você tem interesse!"}),y.jsx("p",{children:"Mini blog © 2024"})]}),ML=L.div`
     text-align: center;
