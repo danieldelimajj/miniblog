@@ -3235,7 +3235,7 @@ This typically indicates that your device does not have a healthy Internet conne
     top: ${({open:t})=>t?"70px":"-100%"};
     left: 0;
     width: 100%;
-    height: 75vh;
+    height: 100vh;
     background-color: #9c9b9b;
     transition: all 0.4s ease-in-out;
     padding: 0;
