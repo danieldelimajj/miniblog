@@ -3200,6 +3200,12 @@ This typically indicates that your device does not have a healthy Internet conne
     color: #aaa;
     margin-bottom: 1em;
     padding: 10px;
+
+    @media(max-width: 479px) {
+        font-size: 14px;
+        font-weight: bold;
+        width: 190px;
+    }
 `,yL=L(sr)`
     display: block;
     margin-top: 15px;
