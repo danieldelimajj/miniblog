@@ -3363,18 +3363,27 @@ This typically indicates that your device does not have a healthy Internet conne
     display: flex;
     flex-direction: column;
     text-align: center;
-    
 `,nM=L.h2`
     font-size: 2.2em;
     margin-bottom: .5em;
-   
 `,Bh=L.p`
     color: #aaa;
     margin-bottom: 34px;
+
+@media(max-width: 479px) {
+    font-size: 20px;
+}
+    
 `,rM=L.div`
     text-align: center;
-    
 `,iM=L.div`
+    @media(max-width: 479px) {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        width: 200px;
+    }
+`,sM=L.div`
     display: flex;
     justify-content: space-between;
     font-weight: bold;
@@ -3382,7 +3391,7 @@ This typically indicates that your device does not have a healthy Internet conne
     width: 50%;
     margin: auto;
     padding: 10px;
-`,sM=L.div`
+`,oM=L.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -3390,53 +3399,58 @@ This typically indicates that your device does not have a healthy Internet conne
     width: 40%;
     padding: 10px;
     margin: auto;
-    
-    `,oM=()=>{const{user:t}=Lc(),e=t.uid,{documents:n,loading:r}=Um("posts",null,e),{deleteDocument:i}=ZL("posts");return r?y.jsx(eM,{children:"Carregando..."}):y.jsxs(tM,{children:[y.jsx(nM,{children:"Dashboard"}),y.jsx(Bh,{children:"Gerencie seus posts"}),n&&n.length===0?y.jsxs(rM,{children:[y.jsx(Bh,{children:"Não foram encontrados posts"}),y.jsx(sr,{to:"/posts/create",className:"btn",children:"Criar primeiro post"})]}):y.jsxs(y.Fragment,{children:[y.jsxs(iM,{children:[y.jsx("span",{children:"Título"}),y.jsx("span",{children:"Ações"})]}),n&&n.map(s=>y.jsxs(sM,{children:[y.jsx("div",{children:y.jsx(Bh,{children:s.title})}),y.jsxs("div",{children:[y.jsx(sr,{to:`/posts/${s.id}`,className:"btn btn-outline",children:"Ver"}),y.jsx(sr,{to:`/posts/edit/${s.id}`,className:"btn btn-outline",children:"Editar"}),y.jsx("button",{onClick:()=>i(s.id),className:"btn btn-outline btn-danger",children:"Excluir"})]})]},s.id))]})]})};function aM(){const{search:t}=oi();return T.useMemo(()=>new URLSearchParams(t),[t])}const lM=L.div`
+
+    @media(max-width: 479px) {
+        display: flex;
+        flex-direction: column;
+        
+    }
+    `,aM=()=>{const{user:t}=Lc(),e=t.uid,{documents:n,loading:r}=Um("posts",null,e),{deleteDocument:i}=ZL("posts");return r?y.jsx(eM,{children:"Carregando..."}):y.jsxs(tM,{children:[y.jsx(nM,{children:"Dashboard"}),y.jsx(Bh,{children:"Gerencie seus posts"}),n&&n.length===0?y.jsxs(rM,{children:[y.jsx(Bh,{children:"Não foram encontrados posts"}),y.jsx(sr,{to:"/posts/create",className:"btn",children:"Criar primeiro post"})]}):y.jsxs(y.Fragment,{children:[y.jsxs(sM,{children:[y.jsx("span",{children:"Título"}),y.jsx("span",{children:"Ações"})]}),n&&n.map(s=>y.jsxs(oM,{children:[y.jsx("div",{children:y.jsx(Bh,{children:s.title})}),y.jsxs(iM,{children:[y.jsx(sr,{to:`/posts/${s.id}`,className:"btn btn-outline",children:"Ver"}),y.jsx(sr,{to:`/posts/edit/${s.id}`,className:"btn btn-outline",children:"Editar"}),y.jsx("button",{onClick:()=>i(s.id),className:"btn btn-outline btn-danger",children:"Excluir"})]})]},s.id))]})]})};function lM(){const{search:t}=oi();return T.useMemo(()=>new URLSearchParams(t),[t])}const uM=L.div`
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 
-`,uM=L.h2`
+`,cM=L.h2`
     margin-top: 2em;
-`,cM=L.div`
+`,hM=L.div`
     text-align: center;
-`,hM=L.p`
+`,dM=L.p`
     margin-bottom: 30px;
-`,dM=()=>{const e=aM().get("q"),{documents:n}=Um("posts",e);return y.jsxs(lM,{children:[y.jsx(uM,{children:"Search"}),y.jsxs("div",{children:[n&&n.length===0&&y.jsxs(cM,{children:[y.jsx(hM,{children:"Não foram encontrados posts a partir da sua busca..."}),y.jsx(sr,{to:"/",className:"btn btn-dark",children:"Voltar"})]}),n&&n.map(r=>y.jsx(oI,{post:r},r.id))]})]})},cI=(t,e)=>{const[n,r]=T.useState(null),[i,s]=T.useState(null),[o,a]=T.useState(null),[l,u]=T.useState(!1);return T.useEffect(()=>{async function c(){if(!l){a(!0);try{const h=await kc(ka,t,e),d=await z2(h);r(d.data()),a(!1)}catch(h){console.log(h),s(h.message)}}}c()},[t,e,l]),T.useEffect(()=>()=>u(!0),[]),{document:n,loading:o,error:i}},fM=L.div`
+`,fM=()=>{const e=lM().get("q"),{documents:n}=Um("posts",e);return y.jsxs(uM,{children:[y.jsx(cM,{children:"Search"}),y.jsxs("div",{children:[n&&n.length===0&&y.jsxs(hM,{children:[y.jsx(dM,{children:"Não foram encontrados posts a partir da sua busca..."}),y.jsx(sr,{to:"/",className:"btn btn-dark",children:"Voltar"})]}),n&&n.map(r=>y.jsx(oI,{post:r},r.id))]})]})},cI=(t,e)=>{const[n,r]=T.useState(null),[i,s]=T.useState(null),[o,a]=T.useState(null),[l,u]=T.useState(!1);return T.useEffect(()=>{async function c(){if(!l){a(!0);try{const h=await kc(ka,t,e),d=await z2(h);r(d.data()),a(!1)}catch(h){console.log(h),s(h.message)}}}c()},[t,e,l]),T.useEffect(()=>()=>u(!0),[]),{document:n,loading:o,error:i}},pM=L.div`
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-`,pM=L.img`
+`,mM=L.img`
     max-width: 580px;
 
     @media(max-width: 479px) {
        max-width: 320px;
     }
 
-`,mM=L.p`
+`,gM=L.p`
     margin-right: 1em;
     font-size: 1.5em;
    
-`,gM=L.div`
+`,yM=L.div`
     display: flex;
     justify-content: center;
     gap: 1em;
-`,yM=L.span`
+`,vM=L.span`
     font-weight: bold;
-`,vM=()=>{const{id:t}=_w(),{document:e,loading:n}=cI("posts",t);return y.jsxs(fM,{children:[n&&y.jsx("p",{children:"Carregando post..."}),e&&y.jsxs("div",{children:[y.jsx("h1",{children:e.title}),y.jsx(pM,{src:e.image,alt:e.title}),y.jsx(mM,{children:e.body}),y.jsx("h3",{children:"Este post é sobre:"}),y.jsx(gM,{children:e.tagsArray.map(r=>y.jsxs("p",{children:[y.jsx(yM,{children:"#"}),r]},r))})]})]})},_M=L.div`
+`,_M=()=>{const{id:t}=_w(),{document:e,loading:n}=cI("posts",t);return y.jsxs(pM,{children:[n&&y.jsx("p",{children:"Carregando post..."}),e&&y.jsxs("div",{children:[y.jsx("h1",{children:e.title}),y.jsx(mM,{src:e.image,alt:e.title}),y.jsx(gM,{children:e.body}),y.jsx("h3",{children:"Este post é sobre:"}),y.jsx(yM,{children:e.tagsArray.map(r=>y.jsxs("p",{children:[y.jsx(vM,{children:"#"}),r]},r))})]})]})},wM=L.div`
     text-align: center;
-`,wM=L.h2`
+`,EM=L.h2`
     font-size: 2.2em;
-`,EM=L.p`
+`,TM=L.p`
     color: #aaa;
     margin-bottom: 2em;
-`,TM=L.p`
+`,IM=L.p`
     margin-bottom: .5em;
     color: #000;
     font-weight: bold;
-`,IM=L.img`
+`,SM=L.img`
     max-width: 100%;
     margin-bottom: 1em;
 
@@ -3444,4 +3458,4 @@ This typically indicates that your device does not have a healthy Internet conne
     
 }
 
-`,SM={loading:null,error:null},AM=(t,e)=>{switch(e.type){case"LOADING":return{loading:!0,error:null};case"UPDATED_DOC":return{loading:!1,error:null};case"ERROR":return{loading:!1,error:e.payload};default:return t}},PM=t=>{const[e,n]=T.useReducer(AM,SM),[r,i]=T.useState(!1),s=a=>{r||n(a)},o=async(a,l)=>{s({type:"LOADING"});try{const u=await kc(ka,t,a);console.log(u);const c=await W2(u,l);console.log(o),s({type:"UPDATED_DOC",payload:c})}catch(u){console.log(u),s({type:"ERROR",payload:u.message})}};return T.useEffect(()=>()=>i(!0),[]),{updateDocument:o,response:e}},RM=()=>{const{id:t}=_w(),{document:e}=cI("posts",t),[n,r]=T.useState(""),[i,s]=T.useState(""),[o,a]=T.useState(""),[l,u]=T.useState([]),[c,h]=T.useState("");T.useEffect(()=>{if(e){r(e.title),a(e.body),s(e.image);const p=e.tagsArray.join(", ");u(p)}},[e]);const{user:d}=Lc(),{updateDocument:m,response:v}=PM("posts"),_=aa(),E=p=>{p.preventDefault(),h("");try{new URL(i)}catch{h("A imagem precisa ser uma URL.")}const f=l.split(",").map(w=>w.trim().toLowerCase());if((!n||!i||!l||!o)&&h("Por favor, preencha todos os campos."),c)return;const g={title:n,image:i,body:o,tagsArray:f,uid:d.uid,createdBy:d.displayName};m(t,g),_("/dashboard")};return y.jsx(_M,{children:e&&y.jsxs(y.Fragment,{children:[y.jsxs(wM,{children:["Editando post:",e.title]}),y.jsx(EM,{children:"Altere os dados do post como desejar"}),y.jsxs("form",{onSubmit:E,children:[y.jsxs("label",{children:[y.jsx("span",{children:"Título:"}),y.jsx("input",{type:"text",name:"title",required:!0,placeholder:"Pense num bom título...",onChange:p=>r(p.target.value),value:n})]}),y.jsxs("label",{children:[y.jsx("span",{children:"URL da imagem:"}),y.jsx("input",{type:"text",name:"image",required:!0,placeholder:"Insira a imagem que representa o seu post.",onChange:p=>s(p.target.value),value:i})]}),y.jsx(TM,{children:"Preview da imagem atual:"}),y.jsx(IM,{src:e.image,alt:e.title}),y.jsxs("label",{children:[y.jsx("span",{children:"Conteúdo:"}),y.jsx("textarea",{name:"body",required:!0,placeholder:"Insira o conteúdo do post:",onChange:p=>a(p.target.value),value:o})]}),y.jsxs("label",{children:[y.jsx("span",{children:"Tags:"}),y.jsx("input",{type:"text",name:"tags",required:!0,placeholder:"Insira as tags separadas por vírgula",onChange:p=>u(p.target.value),value:l})]}),!v.loading&&y.jsx("button",{className:"btn",children:"Editar"}),v.loading&&y.jsx("button",{className:"btn",disabled:!0,children:"Aguarde..."}),v.error&&y.jsx(ParagraphError,{children:v.error}),c&&y.jsx(ParagraphError,{children:c})]})]})})};function CM(){const[t,e]=T.useState(void 0),{auth:n}=Vc(),r=t===void 0;return T.useEffect(()=>{Ek(n,i=>{e(i)})},[n]),r?y.jsx("p",{children:"Carregando..."}):y.jsx("div",{className:"App",children:y.jsx(Y2,{value:{user:t},children:y.jsxs(OP,{children:[y.jsx(OL,{}),y.jsx("div",{className:"container",children:y.jsxs(AP,{children:[y.jsx(Lt,{path:"/",element:y.jsx(pL,{})}),y.jsx(Lt,{path:"/about",element:y.jsx(vL,{})}),y.jsx(Lt,{path:"/Search",element:y.jsx(dM,{})}),y.jsx(Lt,{path:"/posts/:id",element:y.jsx(vM,{})}),y.jsx(Lt,{path:"/login",element:t?y.jsx(fi,{to:"/"}):y.jsx(Xv,{})}),y.jsx(Lt,{path:"/register",element:t?y.jsx(fi,{to:"/"}):y.jsx(jL,{})}),y.jsx(Lt,{path:"/login",element:t?y.jsx(fi,{to:"/"}):y.jsx(Xv,{})}),y.jsx(Lt,{path:"/posts/edit/:id",element:t?y.jsx(RM,{}):y.jsx(fi,{to:"/login"})}),y.jsx(Lt,{path:"/posts/create",element:t?y.jsx(YL,{}):y.jsx(fi,{to:"/login"})}),y.jsx(Lt,{path:"/dashboard",element:t?y.jsx(oM,{}):y.jsx(fi,{to:"/login"})})]})}),y.jsx(LL,{})]})})})}zh.createRoot(document.getElementById("root")).render(y.jsx(ht.StrictMode,{children:y.jsx(CM,{})}));
+`,AM={loading:null,error:null},PM=(t,e)=>{switch(e.type){case"LOADING":return{loading:!0,error:null};case"UPDATED_DOC":return{loading:!1,error:null};case"ERROR":return{loading:!1,error:e.payload};default:return t}},RM=t=>{const[e,n]=T.useReducer(PM,AM),[r,i]=T.useState(!1),s=a=>{r||n(a)},o=async(a,l)=>{s({type:"LOADING"});try{const u=await kc(ka,t,a);console.log(u);const c=await W2(u,l);console.log(o),s({type:"UPDATED_DOC",payload:c})}catch(u){console.log(u),s({type:"ERROR",payload:u.message})}};return T.useEffect(()=>()=>i(!0),[]),{updateDocument:o,response:e}},CM=()=>{const{id:t}=_w(),{document:e}=cI("posts",t),[n,r]=T.useState(""),[i,s]=T.useState(""),[o,a]=T.useState(""),[l,u]=T.useState([]),[c,h]=T.useState("");T.useEffect(()=>{if(e){r(e.title),a(e.body),s(e.image);const p=e.tagsArray.join(", ");u(p)}},[e]);const{user:d}=Lc(),{updateDocument:m,response:v}=RM("posts"),_=aa(),E=p=>{p.preventDefault(),h("");try{new URL(i)}catch{h("A imagem precisa ser uma URL.")}const f=l.split(",").map(w=>w.trim().toLowerCase());if((!n||!i||!l||!o)&&h("Por favor, preencha todos os campos."),c)return;const g={title:n,image:i,body:o,tagsArray:f,uid:d.uid,createdBy:d.displayName};m(t,g),_("/dashboard")};return y.jsx(wM,{children:e&&y.jsxs(y.Fragment,{children:[y.jsxs(EM,{children:["Editando post:",e.title]}),y.jsx(TM,{children:"Altere os dados do post como desejar"}),y.jsxs("form",{onSubmit:E,children:[y.jsxs("label",{children:[y.jsx("span",{children:"Título:"}),y.jsx("input",{type:"text",name:"title",required:!0,placeholder:"Pense num bom título...",onChange:p=>r(p.target.value),value:n})]}),y.jsxs("label",{children:[y.jsx("span",{children:"URL da imagem:"}),y.jsx("input",{type:"text",name:"image",required:!0,placeholder:"Insira a imagem que representa o seu post.",onChange:p=>s(p.target.value),value:i})]}),y.jsx(IM,{children:"Preview da imagem atual:"}),y.jsx(SM,{src:e.image,alt:e.title}),y.jsxs("label",{children:[y.jsx("span",{children:"Conteúdo:"}),y.jsx("textarea",{name:"body",required:!0,placeholder:"Insira o conteúdo do post:",onChange:p=>a(p.target.value),value:o})]}),y.jsxs("label",{children:[y.jsx("span",{children:"Tags:"}),y.jsx("input",{type:"text",name:"tags",required:!0,placeholder:"Insira as tags separadas por vírgula",onChange:p=>u(p.target.value),value:l})]}),!v.loading&&y.jsx("button",{className:"btn",children:"Editar"}),v.loading&&y.jsx("button",{className:"btn",disabled:!0,children:"Aguarde..."}),v.error&&y.jsx(ParagraphError,{children:v.error}),c&&y.jsx(ParagraphError,{children:c})]})]})})};function kM(){const[t,e]=T.useState(void 0),{auth:n}=Vc(),r=t===void 0;return T.useEffect(()=>{Ek(n,i=>{e(i)})},[n]),r?y.jsx("p",{children:"Carregando..."}):y.jsx("div",{className:"App",children:y.jsx(Y2,{value:{user:t},children:y.jsxs(OP,{children:[y.jsx(OL,{}),y.jsx("div",{className:"container",children:y.jsxs(AP,{children:[y.jsx(Lt,{path:"/",element:y.jsx(pL,{})}),y.jsx(Lt,{path:"/about",element:y.jsx(vL,{})}),y.jsx(Lt,{path:"/Search",element:y.jsx(fM,{})}),y.jsx(Lt,{path:"/posts/:id",element:y.jsx(_M,{})}),y.jsx(Lt,{path:"/login",element:t?y.jsx(fi,{to:"/"}):y.jsx(Xv,{})}),y.jsx(Lt,{path:"/register",element:t?y.jsx(fi,{to:"/"}):y.jsx(jL,{})}),y.jsx(Lt,{path:"/login",element:t?y.jsx(fi,{to:"/"}):y.jsx(Xv,{})}),y.jsx(Lt,{path:"/posts/edit/:id",element:t?y.jsx(CM,{}):y.jsx(fi,{to:"/login"})}),y.jsx(Lt,{path:"/posts/create",element:t?y.jsx(YL,{}):y.jsx(fi,{to:"/login"})}),y.jsx(Lt,{path:"/dashboard",element:t?y.jsx(aM,{}):y.jsx(fi,{to:"/login"})})]})}),y.jsx(LL,{})]})})})}zh.createRoot(document.getElementById("root")).render(y.jsx(ht.StrictMode,{children:y.jsx(kM,{})}));
