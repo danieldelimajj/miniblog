@@ -3242,7 +3242,7 @@ This typically indicates that your device does not have a healthy Internet conne
     left: 0;
     width: 100%;
     height: 70vh;
-    background-color: #9c9b9b;
+    background-color: #747373;
     transition: all 0.4s ease-in-out;
     padding: 0;
     margin: 0;
@@ -3297,7 +3297,7 @@ This typically indicates that your device does not have a healthy Internet conne
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #edf3f6;
+    background-color: #e1e3e4;
 
     @media(max-width: 479px) {
         font-size: 16px;  
