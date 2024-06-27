@@ -3236,7 +3236,7 @@ This typically indicates that your device does not have a healthy Internet conne
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 50px;
+    gap: 48px;
     position: absolute;
     top: ${({open:t})=>t?"70px":"-100%"};
     left: 0;
